@@ -7,7 +7,7 @@ const routes =
   <Redirect from='/' to='/contacts' />
   <Route path='contacts' component={c.Layout}>
     <IndexRoute component={c.Collection} />
-    <Route path=':contactID' component={c.Show} />
+    <Route path=':contactId' component={c.Show} />
   </Route>
 </Route>;
 
