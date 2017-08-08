@@ -1,10 +1,14 @@
 import React from 'react';
-
-import { Route } from 'react-router';
-
-import { Layout } from './components';
+import { Route, Redirect, IndexRoute } from 'react-router';
+import c from './components';
 
 const routes =
-<Route path='/' component={Layout} />;
+<Route>
+  <Redirect from='/' to='/contacts' />
+  <Route path='contacts' component={c.Layout}>
+    <IndexRoute component={c.Collection} />
+    <Route path=':contactID' component={c.Show} />
+  </Route>
+</Route>;
 
 export default routes;
