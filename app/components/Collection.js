@@ -1,7 +1,7 @@
 import React from 'react';
 import data from './data';
 import Contact from './Contact';
-import './Collection.css';
+import styles from './Collection.sass';
 
 class Layout extends React.Component {
   componentWillMount() {
@@ -43,7 +43,7 @@ class Layout extends React.Component {
     </div>;
   render() {
     return (
-      <div id='Collection'>
+      <div id='Collection' className={styles.main}>
         {this.newContact()}
         <div className='pure-g' >
           {this.state.contacts.map(info =>
